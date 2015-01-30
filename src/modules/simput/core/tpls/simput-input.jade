@@ -1,0 +1,55 @@
+section(layout="row", flex, ng-show="viewModel")
+    md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id="left", md-is-locked-open="1")
+        md-content.md-padding(style="padding-top: 0;")
+            div(layout="row")
+                md-button(ng-click="saveDataModel()", aria-label="Save data model")
+                    i.fa.fa-fw.fa-database
+                md-button(ng-click="saveOutput()", aria-label="Save output file")
+                    i.fa.fa-fw.fa-floppy-o
+                span(flex)
+                md-button(ng-click="showErrors($event)", ng-show="errors.length > 0", aria-label="Show errors")
+                    i.fa.fa-fw.fa-warning
+            hr(style="margin-top: 0;")
+            ul.nav
+                li(ng-repeat="viewId in template.definition.order")
+                    i.fa.fa-fw(ng-class="{ 'fa-check' : viewModel.data[viewId], 'fa-warning': !viewModel.data[viewId]}")
+                    span(ng-click="((!viewModel.data[viewId] || viewModel.data[viewId].length === 0) && template.definition.views[viewId].size) ? addView($event, viewId) :  activateSection(viewId, 0)", ng-class="{ active: (activeSection.view === viewId) }")
+                        | {{ template.definition.views[viewId].label }}
+                    i.fa.fa-fw.fa-plus.pull-right(ng-show="template.definition.views[viewId].size === -1", ng-click="addView($event, viewId)")
+                    ul(ng-show="viewModel.data[viewId] && viewModel.data[viewId].length > 0 && template.definition.views[viewId].size !== undefined")
+                        li(ng-repeat="subView in viewModel.data[viewId]", ng-class="{ active: (activeSection.view === viewId && activeSection.idx === $index) }")
+                            span(ng-click="activateSection(viewId, $index)")
+                                | {{ subView.name }}
+                            i.fa.fa-fw.fa-trash.pull-right(ng-click="removeView(viewId, $index)")
+
+                    ul(ng-show="template.definition.views[viewId].children !== undefined")
+                        li(ng-repeat="subViewId in template.definition.views[viewId].children")
+                            i.fa.fa-fw(ng-class="{ 'fa-check' : viewModel.data[subViewId], 'fa-warning': !viewModel.data[subViewId]}")
+                            span(ng-click="((!viewModel.data[subViewId] || viewModel.data[subViewId].length === 0) && template.definition.views[subViewId].size) ? addView($event, subViewId) :  activateSection(subViewId, 0)", ng-class="{ active: (activeSection.view === subViewId) }")
+                                | {{ template.definition.views[subViewId].label }}
+                            i.fa.fa-fw.fa-plus.pull-right(ng-show="template.definition.views[subViewId].size === -1", ng-click="addView($event, subViewId)")
+                            ul(ng-show="viewModel.data[subViewId] && viewModel.data[subViewId].length > 0 && template.definition.views[subViewId].size !== undefined")
+                                li(ng-repeat="subView in viewModel.data[subViewId]",ng-class="{ active: (activeSection.view === subViewId && activeSection.idx === $index) }")
+                                    span(ng-click="activateSection(subViewId, $index)")
+                                        | {{ subView.name }}
+                                    i.fa.fa-fw.fa-trash.pull-right(ng-click="removeView(subViewId, $index)")
+
+    md-content.md-padding(flex, layout="column", simput-input-content-panel, view-id="{{ activeSection.view }}", view-index="{{ activeSection.idx }}", view-data="activeSection.data", template="template", view-model="viewModel")
+
+section(ng-hide="viewModel", flex, layout="column")
+
+    div(style="height: 150px;")
+
+    div(layout="row", style="font-size: 124px;")
+        span(flex)
+        i.fa.fa-fw.fa-file-text-o
+        i.fa.fa-fw.fa-arrow-right
+        i.fa.fa-fw.fa-database
+        span(flex)
+
+    div(layout="row", style="font-size: 58px;")
+        span(flex)
+        p
+            | Drop your file here
+        span(flex)
+

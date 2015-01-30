@@ -1,0 +1,11 @@
+div.simput-property(layout="row", layout-align="space-around center")
+
+    md-input-container(flex="90")
+        label
+            | {{ property.label }}
+        input(ng-model="data[property.id]")
+
+    span(flex)
+
+    md-button.md-fab.help-button(aria-label="Toggle help", ng-click="toggleLocalHelp(property.id)")
+        i.fa.fa-fw.fa-question.md-primary

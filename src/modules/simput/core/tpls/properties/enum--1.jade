@@ -1,0 +1,7 @@
+div.simput-property(layout="row", layout-align="space-around center", style="height: 350px;")
+    label(flex="20")
+        | {{ property.label }}
+    select(flex="70", multiple, style="height: 100%;", ng-multiple="true", ng-model="data[property.id]", type="{{ property.enum.type }}", ng-options="item as item for item in (property.enum.external ? viewModel.external[property.enum.external].labels : property.enum.labels)")
+    span(flex)
+    md-button.md-fab.help-button(aria-label="Toggle help", ng-click="toggleLocalHelp(property.id)")
+        i.fa.fa-fw.fa-question.md-primary

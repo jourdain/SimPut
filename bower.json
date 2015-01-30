@@ -1,0 +1,31 @@
+{
+  "name": "SimPut",
+  "version": "0.0.1",
+  "authors": [
+    "Sebastien Jourdain <sebastien.jourdain@kitware.com>"
+  ],
+  "description": "Web front-end to provide a Simple Input for Simulations",
+  "keywords": [
+    "Web",
+    "Local application",
+    "simulation"
+  ],
+  "license": "BSD",
+  "homepage": "http://www.kitware.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "dist"
+  ],
+  "dependencies": {
+    "angular": "1.3.11",
+    "angular-material": "master",
+    "font-awesome": "4.2.0"
+  },
+  "devDependencies": {},
+  "resolutions": {
+    "angular": "1.3.11"
+  }
+}

@@ -1,0 +1,18 @@
+md-dialog(aria-label="{{ title }}", style="width: 50%;")
+    md-subheader.md-sticky-no-effect.cmb-subheader
+        strong(title)
+            | {{ title }}
+
+    md-content
+        form(layout="column")
+            md-input-container(flex)
+                label
+                    | {{ namePlaceHolder }}
+                input(ng-model="data.name")
+
+    div.md-actions(layout="row")
+        span(flex)
+        md-button(ng-click="ok(data)").md-raised.md-primary
+            | Ok
+        md-button(ng-click="cancel()").md-raised.md-warn
+            | Cancel

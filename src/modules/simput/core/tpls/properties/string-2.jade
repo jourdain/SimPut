@@ -1,0 +1,18 @@
+div.simput-property(layout="row", layout-align="space-around center")
+    label(flex="20")
+        | {{ property.label }}
+
+    md-input-container(flex="35")
+        label
+            | {{ property.components[0] }}
+        input(ng-model="data[property.id][0]")
+
+    md-input-container(flex="35")
+        label
+            | {{ property.components[1] }}
+        input(ng-model="data[property.id][1]")
+
+    span(flex)
+
+    md-button.md-fab.help-button(aria-label="Toggle help", ng-click="toggleLocalHelp(property.id)")
+        i.fa.fa-fw.fa-question.md-primary

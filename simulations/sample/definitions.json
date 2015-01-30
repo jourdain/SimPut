@@ -1,0 +1,166 @@
+{
+    "order": [ 
+        "all", 
+        "multi", 
+        "choice"
+    ],
+    "views": {
+        "all": {
+            "id"        : "all.args",
+            "label"     : "Single view with all attributes",
+            "attributes": [
+                "double-args", "string-args", "enum-args", "ext-enum"
+            ],
+            "children": ["nested-a", "nested-b"]
+        },
+        "multi": {
+            "id"    : "multi.double",
+            "label" : "Multi view for doubles attributes",
+            "size"  : -1,
+            "attributes": [
+                "double-args"
+            ]
+        },
+        "choice": {
+            "id"    : "choice.attr",
+            "label" : "Test attribute OR",
+            "attributes": [
+                "string-args", "double-args", ["enum-args", "ext-enum"]
+            ]
+        }, 
+        "nested-a": {
+            "id"        : "nested-a",
+            "label"     : "Nested view",
+            "size"      : -1,
+            "attributes": [
+                "double-args", "string-args", "enum-args", "ext-enum"
+            ]
+        }, 
+        "nested-b": {
+            "id"        : "nested-b",
+            "label"     : "Nested view",
+            "size"      : -1,
+            "attributes": [
+                "double-args", "string-args", "enum-args", "ext-enum"
+            ]
+        }
+    },
+    "definitions": {
+        "double-args": {
+            "label"     : "All double possible setup",
+            "parameters": [
+                {
+                    "id"      : "d1",
+                    "label"   : "Single Double Value",
+                    "type"    : "double",
+                    "default" : 0.123,
+                    "size"    : 1,
+                    "min"     : -1,
+                    "max"     : 1
+                },{
+                    "id"      : "d2",
+                    "label"   : "Two Double Values",
+                    "type"    : "double",
+                    "default" : [0.123, 0.456],
+                    "size"    : 2,
+                    "min"     : [-1, -2],
+                    "max"     : [1, 2]
+                },{
+                    "id"      : "d3",
+                    "label"   : "Three Double Values",
+                    "type"    : "double",
+                    "default" : [0.123, 0.456, 0.789],
+                    "size"    : 3,
+                    "min"     : [-1, -2, -3],
+                    "max"     : [1, 2, 3] 
+                },{
+                    "id"      : "d6",
+                    "label"   : "Half Matrix Double Values",
+                    "type"    : "double",
+                    "default" : [0.11, 0.12, 0.13, 0.21, 0.22, 0.31],
+                    "size"    : 6,
+                    "min"     : [-1, -2, -3, -4, -5, -6],
+                    "max"     : [1, 2, 3, 4, 5, 6],
+                    "layout"  : "half-matrix"
+                }
+            ]
+        },
+        "string-args": {
+            "label"     : "All string possible setup",
+            "parameters": [
+                {
+                    "id"      : "s1",
+                    "label"   : "Single String Value",
+                    "type"    : "string",
+                    "default" : "Just simple text",
+                    "size"    : 1,
+                    "pattern" : ""
+                },{
+                    "id"      : "s2",
+                    "label"   : "Two String Values",
+                    "type"    : "string",
+                    "default" : ["Parameter 1", "Parameter 2"],
+                    "size"    : 2,
+                    "pattern" : ["",""]
+                },{
+                    "id"      : "s3",
+                    "label"   : "Three String Values",
+                    "type"    : "string",
+                    "default" : ["a", "b", "c"],
+                    "size"    : 3,
+                    "pattern" : ["","",""]
+                }
+            ]
+        },
+        "enum-args": {
+            "label"     : "All enum possible setup",
+            "parameters": [
+                {
+                    "id"      : "enum-1",
+                    "label"   : "Single Choice Value",
+                    "type"    : "enum",
+                    "default" : 0,
+                    "size"    : 1,
+                    "enum" : {
+                        "labels" : ["Choice 1", "Choice 2", "Choice 3", "Choice 4", "Choice 5", "Choice 6"],
+                        "values" : [9, 7, 4, 1, -1, "Str"]
+                    }
+                },{
+                    "id"      : "enum-n",
+                    "label"   : "Multi-choice",
+                    "type"    : "enum",
+                    "default" : [0,2,4],
+                    "size"    : -1,
+                    "enum" : {
+                        "labels" : ["Choice 1", "Choice 2", "Choice 3", "Choice 4", "Choice 5", "Choice 6"],
+                        "values" : [9, 7, 4, 1, -1, "Str"]
+                    }
+                }
+            ]
+        },
+        "ext-enum": {
+            "label"     : "Use external data for Enum",
+            "parameters": [
+                {
+                    "id"      : "enum-1",
+                    "label"   : "Single Choice Value",
+                    "type"    : "enum",
+                    "default" : -1,
+                    "size"    : 1,
+                    "enum" : {
+                        "external": "face-list"
+                    }
+                },{
+                    "id"      : "enum-n",
+                    "label"   : "Multi-choice",
+                    "type"    : "enum",
+                    "default" : [],
+                    "size"    : -1,
+                    "enum" : {
+                        "external": "element-list"
+                    }
+                }
+            ]
+        }
+    }
+}

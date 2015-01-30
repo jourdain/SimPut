@@ -1,0 +1,25 @@
+md-content.md-padding(flex)
+    div(ng-repeat="attribute in template.definition.views[viewId].attributes")
+        div(ng-if="isArray(attribute)", ng-init="activeOrIdx = $index;")
+            div.simput-property-head-group(layout="row")
+                i.fa.fa-lg.fa-fw(ng-class="{ 'fa-caret-down' : !viewData.or[activeOrIdx].collapsed, 'fa-caret-right': viewData.or[activeOrIdx].collapsed }", ng-click="viewData.or[activeOrIdx].collapsed = !viewData.or[activeOrIdx].collapsed;")
+                select(ng-model="viewData.or[$index].active", ng-options="opt as opt for opt in viewData.or[$index].labels")
+                hr(style="position: relative; top: 1em; margin: 0 20px;", flex)
+                i.fa.fa-fw.fa-gear
+                i.fa.fa-fw.fa-question(ng-click="toggleHelp($event)")
+
+            div(ng-repeat="attr in attribute", ng-hide="viewData.or[activeOrIdx].collapsed")
+                form.form-horizontal.simput-property-panel(role="form", ng-show="viewData.or[activeOrIdx].active === template.definition.definitions[attr].label")
+                    div.collapsable(ng-repeat="param in template.definition.definitions[attr].parameters", simput-input-property-panel, property="param", data="viewData[attr]", view-model="viewModel", template="template")
+
+        div(ng-if="!isArray(attribute)")
+            div.simput-property-head-group(layout="row")
+                i.fa.fa-lg.fa-fw(ng-class="{ 'fa-caret-down' : !viewData[attribute].collapsed, 'fa-caret-right': viewData[attribute].collapsed }", ng-click="viewData[attribute].collapsed = !viewData[attribute].collapsed;")
+                strong(ng-click="viewData[attribute].collapsed = !viewData[attribute].collapsed;")
+                    | {{ template.definition.definitions[attribute].label }}
+                hr(style="position: relative; top: 1em; margin: 0 20px;", flex)
+                i.fa.fa-fw.fa-gear
+                i.fa.fa-fw.fa-question(ng-click="toggleHelp($event)")
+
+            form.form-horizontal.cmb-property-panel(role="form", ng-hide="viewData[attribute].collapsed")
+                div.collapsable(ng-repeat="param in template.definition.definitions[attribute].parameters", simput-input-property-panel, property="param", data="viewData[attribute]", view-model="viewModel", template="template")

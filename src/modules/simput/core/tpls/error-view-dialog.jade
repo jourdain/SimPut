@@ -1,0 +1,15 @@
+md-dialog(aria-label="Error", style="width: 50%;")
+    md-subheader.md-sticky-no-effect.cmb-subheader
+        strong(title)
+            | Some errors occur
+
+    md-content
+        table
+            tr(ng-repeat="error in errors track by $index")
+                td
+                    | {{ error }}               
+
+    div.md-actions(layout="row")
+        span(flex)
+        md-button(ng-click="quit()").md-raised
+            | Ok
