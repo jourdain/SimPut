@@ -1,71 +1,54 @@
 {
-    "name": "SimPut",
-    "version": "0.9.0",
-    "license": "BSD",
-    "devDependencies": {
-        "parallelshell"       : "latest",
-        "rimraf"              : "latest",
-        "concat"              : "latest",
-        "fs"                  : "latest",
-        "mkdirp"              : "latest",
-        "minimist"            : "latest",
-     
-        "live-reload"         : "latest",
-        "watch"               : "latest",
-        "live-reload"         : "latest",
-        "http-server"         : "latest",
-        "opener"              : "latest",
-     
-        "jshint"              : "latest",
-        "jshint-stylish"      : "latest",
-             
-        "stylus"              : "latest",
-        "cssmin"              : "latest",
-   
-        "bower"               : "latest",
-        "main-bower-files"    : "latest",
-           
-        "jade"                : "latest",
-        "templatizer"         : "latest",
-        
-        "uglify-save-license" : "latest",
-        "uglify-js"           : "latest",
-        "browserify"          : "latest",
-        "autoprefixer"        : "latest"
-    },
-    "scripts": {
-        "postinstall"    : "./node_modules/.bin/bower install && npm run build",
-        "env"            : "env",
-        "init"           : "mkdirp dist/js dist/fonts dist/css",
-
-        "clean"          : "rimraf dist",
-        "postclean"      : "npm run init",
-        
-        "lint"           : "jshint --reporter node_modules/jshint-stylish/stylish.js src/**/*.js",
-
-        "watch:lint"     : "watch 'npm run lint' src --wait=30",
-        "watch:build"    : "watch 'npm run build' src",
-
-        "livereload"     : "live-reload --port 9889 dist/",
-        "serve"          : "http-server -p 9888 dist/",
-
-        "open:dev"       : "opener http://localhost:9888",
-
-        "vendors"        : "node scripts/bower-vendor.js",
-
-        "build:css"      : "stylus -c < src/modules/simput/simput.styl > dist/css/simput.css",
-        "build:js"       : "browserify src/modules/app.js > dist/js/simput.js && uglifyjs dist/js/simput.js -o dist/js/simput-min.js --source-map dist/js/simput-min.js.map --source-map-root /js/simput.js",
-        "build:jade"     : "templatizer -d src/modules -o dist/js/simput-tpls.js && uglifyjs dist/js/simput-tpls.js -o dist/js/simput-tpls-min.js --source-map dist/js/simput-tpls-min.js.map --source-map-root /js/simput-tpls-min.js",
-
-        "prebuild"       : "npm run init",
-        "build"          : "parallelshell 'cp src/index.html dist/index.html' 'npm run vendors' 'npm run build:css' 'npm run build:js' 'npm run build:jade' 'npm run compile'" ,
-        "buildc"         : "npm run build",
-        "prebuildc"      : "npm run clean",
-
-        "dev"            : "npm run open:dev -s & parallelshell 'npm run live-reload -s' 'npm run serve -s' 'npm run watch:build -s'",
-
-        "compile:sample" : "node scripts/SimPut-compiler.js -p ./simulations/sample -o dist/js/sample.js -n sample -d sample-data.json -t sample.txt",
-        "compile:hydra"  : "node scripts/SimPut-compiler.js -p ./simulations/hydra  -o dist/js/hydra.js  -n hydra -d hydra-data.json -t hydra.ctln",
-        "compile"        : "npm run compile:sample && npm run compile:hydra"
-    }
+  "name": "SimPut",
+  "version": "1.0.0",
+  "license": "BSD",
+  "devDependencies": {
+    "parallelshell": "latest",
+    "rimraf": "latest",
+    "concat": "latest",
+    "fs": "latest",
+    "mkdirp": "latest",
+    "minimist": "latest",
+    "live-reload": "latest",
+    "watch": "latest",
+    "http-server": "latest",
+    "opener": "latest",
+    "jshint": "latest",
+    "jshint-stylish": "latest",
+    "stylus": "latest",
+    "cssmin": "latest",
+    "bower": "latest",
+    "main-bower-files": "latest",
+    "jade": "latest",
+    "templatizer": "latest",
+    "uglify-save-license": "latest",
+    "uglify-js": "latest",
+    "browserify": "latest",
+    "autoprefixer": "latest"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/.bin/bower install && npm run build",
+    "env": "env",
+    "init": "mkdirp dist/js dist/fonts dist/css",
+    "clean": "rimraf dist",
+    "postclean": "npm run init",
+    "lint": "jshint --reporter node_modules/jshint-stylish/stylish.js src/**/*.js",
+    "watch:lint": "watch 'npm run lint' src --wait=30",
+    "watch:build": "watch 'npm run build' src",
+    "livereload": "live-reload --port 9889 dist/",
+    "serve": "http-server -p 9888 dist/",
+    "open:dev": "opener http://localhost:9888",
+    "vendors": "node scripts/bower-vendor.js",
+    "build:css": "stylus -c < src/modules/simput/simput.styl > dist/css/simput.css",
+    "build:js": "browserify src/modules/app.js > dist/js/simput.js && uglifyjs dist/js/simput.js -o dist/js/simput-min.js --source-map dist/js/simput-min.js.map --source-map-root /js/simput.js",
+    "build:jade": "templatizer -d src/modules -o dist/js/simput-tpls.js && uglifyjs dist/js/simput-tpls.js -o dist/js/simput-tpls-min.js --source-map dist/js/simput-tpls-min.js.map --source-map-root /js/simput-tpls-min.js",
+    "prebuild": "npm run init",
+    "build": "parallelshell 'cp src/index.html dist/index.html' 'npm run vendors' 'npm run build:css' 'npm run build:js' 'npm run build:jade' 'npm run compile'",
+    "buildc": "npm run build",
+    "prebuildc": "npm run clean",
+    "dev": "npm run open:dev -s & parallelshell 'npm run live-reload -s' 'npm run serve -s' 'npm run watch:build -s'",
+    "compile:sample": "node scripts/SimPut-compiler.js -p ./simulations/sample -o dist/js/sample.js -n sample -d sample-data.json -t sample.txt",
+    "compile:hydra": "node scripts/SimPut-compiler.js -p ./simulations/hydra  -o dist/js/hydra.js  -n hydra -d hydra-data.json -t hydra.ctln",
+    "compile": "npm run compile:sample && npm run compile:hydra"
+  }
 }
