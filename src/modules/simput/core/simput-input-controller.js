@@ -77,6 +77,7 @@ angular.module("kitware.SimPut.core")
         };
 
         $scope.saveDataModel = function () {
+            $rootScope.$broadcast('simput-click', 'save-model');
             $rootScope.$broadcast('save-file', {
                 name: $scope.template.files[0],
                 content: JSON.stringify($scope.viewModel, null, 4)
@@ -84,23 +85,33 @@ angular.module("kitware.SimPut.core")
         };
 
         $scope.saveOutput = function () {
-            var jadeModel = $scope.template.extract($scope.template, $scope.viewModel),
-                outputContent = '';
+            $rootScope.$broadcast('simput-click', 'save-output');
 
-            $scope.errors = jadeModel.errors;
-
-            if(jadeModel.valid) {
-                try {
-                    outputContent = $scope.template.template(jadeModel.data);
-                    $rootScope.$broadcast('save-file', {
-                        name: $scope.template.files[1],
-                        content: outputContent
-                    });
-                } catch(error) {
-                    $scope.errors.push("Output generation failed when applying template.");
-                    $scope.errors.push(error.message);
-                    console.log(jadeModel);
+            try {
+                var jadeModel = $scope.template.extract($scope.template, $scope.viewModel),
+                    outputContent = '';
+    
+                $scope.errors = jadeModel.errors;
+    
+                if(jadeModel.valid) {
+                    try {
+                        outputContent = $scope.template.template(jadeModel.data);
+                        $rootScope.$broadcast('save-file', {
+                            name: $scope.template.files[1],
+                            content: outputContent
+                        });
+                    } catch(error) {
+                        $scope.errors.push("Output generation failed when applying template.");
+                        $scope.errors.push(error.message);
+                        console.log(jadeModel);
+                        $rootScope.$broadcast('simput-error');
+                    }
+                } else {
+                    $rootScope.$broadcast('simput-error');
                 }
+            } catch(error) {
+                console.log(error.message);
+                $rootScope.$broadcast('simput-error');
             }
         }
 

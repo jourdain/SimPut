@@ -2,9 +2,9 @@ section(layout="row", flex, ng-show="viewModel")
     md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id="left", md-is-locked-open="1")
         md-content.md-padding(style="padding-top: 0;")
             div(layout="row")
-                md-button(ng-click="saveDataModel()", aria-label="Save data model")
+                md-button.save-data-model(ng-click="saveDataModel()", aria-label="Save data model")
                     i.fa.fa-fw.fa-database
-                md-button(ng-click="saveOutput()", aria-label="Save output file")
+                md-button.save-output-model(ng-click="saveOutput()", aria-label="Save output file")
                     i.fa.fa-fw.fa-floppy-o
                 span(flex)
                 md-button(ng-click="showErrors($event)", ng-show="errors.length > 0", aria-label="Show errors")
@@ -36,7 +36,7 @@ section(layout="row", flex, ng-show="viewModel")
 
     md-content.md-padding(flex, layout="column", simput-input-content-panel, view-id="{{ activeSection.view }}", view-index="{{ activeSection.idx }}", view-data="activeSection.data", template="template", view-model="viewModel")
 
-section(ng-hide="viewModel", flex, layout="column")
+section.simput-welcome(ng-hide="viewModel", flex, layout="column")
 
     div(style="height: 150px;")
 

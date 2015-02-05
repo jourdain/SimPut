@@ -1,8 +1,9 @@
 {
   "name": "SimPut",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "authors": [
-    "Sebastien Jourdain <sebastien.jourdain@kitware.com>"
+    "Sebastien Jourdain <sebastien.jourdain@kitware.com>",
+    "Chris Harris <chris.harris@kitware.com>"
   ],
   "description": "Web front-end to provide a Simple Input for Simulations",
   "keywords": [
