@@ -26,7 +26,15 @@ angular.module("kitware.SimPut.core")
             link: function(scope, element, attrs) {
                 var htmlCode = null,
                     templateKey = scope.property.type + '-' + scope.property.size,
-                    template = scope.template;
+                    template = scope.template,
+                    data = scope.data;
+
+                if(data === undefined) {
+                    // No data available yet
+                    console.log('No data available yet');
+                    console.log(scope);
+                    return;
+                }
 
                 if(scope.property.layout) {
                     templateKey += '-' + (scope.property.layout);

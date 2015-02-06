@@ -121,6 +121,10 @@
             }
         }
 
+        if(isArray(value)) {
+            return [].concat(value); // Clone to prevent reference sharing
+        }
+
         return value;
     }
 

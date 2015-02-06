@@ -168,8 +168,8 @@ function(definitions, model) {
 
     try {
         templateDataModel.data.plotstatvar = {
-            elem         : exctractValue('TurbulenceStatistics', 'turbulencestatistics.evariables', model.data.output[0]),
-            node         : exctractValue('TurbulenceStatistics', 'turbulencestatistics.nvariables', model.data.output[0]),
+            elem         : [].concat(exctractValue('TurbulenceStatistics', 'turbulencestatistics.evariables', model.data.output[0])),
+            node         : [].concat(exctractValue('TurbulenceStatistics', 'turbulencestatistics.nvariables', model.data.output[0])),
             side         : [],
             starttime    : model.data.output[0].TurbulenceStatistics['turbulencestatistics.starttime'],
             endtime      : model.data.output[0].TurbulenceStatistics['turbulencestatistics.endtime'],
@@ -287,6 +287,9 @@ function(definitions, model) {
                 var groupName = definitions.definition.definitions[activeAttr].value;
 
                 if(groupName === undefined) {
+                    console.log("No groupName => scalar");
+                    console.log(activeAttr);
+                    console.log(list[count]);
                     groupName = exctractValue(activeAttr, 'scalar', list[count]);
                 }
 

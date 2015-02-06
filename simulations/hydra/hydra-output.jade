@@ -152,12 +152,12 @@ if output.plotvar.side
 |    plotstatvar
 | 
 
-if plotstatvar.elem
+if plotstatvar.elem && plotstatvar.elem.length > 0
     each variable in plotstatvar.elem
         |      elem !{variable}
         | 
 
-if plotstatvar.node
+if plotstatvar.node && plotstatvar.node.length > 0
     each variable in plotstatvar.node
         |      node !{variable}
         | 
