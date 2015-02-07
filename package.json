@@ -52,6 +52,8 @@
     "dev": "npm run open:dev -s & parallelshell 'npm run live-reload -s' 'npm run serve -s' 'npm run watch:build -s'",
     "compile:sample": "node scripts/SimPut-compiler.js -p ./simulations/sample -o dist/js/sample.js -n sample -d sample-data.json -t sample.txt",
     "compile:hydra": "node scripts/SimPut-compiler.js -p ./simulations/hydra  -o dist/js/hydra.js  -n hydra -d hydra-data.json -t hydra.ctln",
-    "compile": "npm run compile:sample && npm run compile:hydra"
+    "compile": "npm run compile:sample && npm run compile:hydra",
+    "preapp": "npm run build",
+    "app" : "node scripts/app-builder.js -i ./dist/index.html  -o dist/SimPut.html"
   }
 }
