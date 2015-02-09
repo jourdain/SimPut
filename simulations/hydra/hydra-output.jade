@@ -72,12 +72,12 @@ each mat, index in materials
 | 
 
 //- ==== Output section (3.6) ====
+//- # FIXME CRASH:   prti     #{output.prti} 
 
 | 
 |   dump     #{output.dump}
 |   plti     #{output.plti}
 |   prtlev   #{output.prtlev}
-|   prti     #{output.prti}
 |   thti     #{output.thti}
 |   ttyi     #{output.ttyi}
 |   pltype   #{output.pltype}
@@ -184,9 +184,10 @@ each side in plotstatvar.side
 
 //- ==== Energy section (4.2) ====
 
-| 
-|   energy  #{energy.form}
-| 
+//- FIXME error with isothermal
+//- | 
+//- |   energy  #{energy.form}
+//- | 
 
 //- ==== Hydrostat section (4.3) ====
 
@@ -204,6 +205,7 @@ if hstat.length > 0
     | 
 
 //- ==== Initial conditions section (4.4) ====
+//- # FIXME crash: init_energy  #{initial.init_energy}
 
 | 
 |   initial
@@ -216,7 +218,6 @@ if hstat.length > 0
 |      turbnu       #{initial.turbnu}
 |      temperature  #{initial.temperature}
 |      enthalpy     #{initial.enthalpy}
-|      init_energy  #{initial.init_energy}
 |   end
 | 
 
