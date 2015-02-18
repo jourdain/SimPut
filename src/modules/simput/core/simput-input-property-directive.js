@@ -1,5 +1,5 @@
 angular.module("kitware.SimPut.core")
-    .directive('simputInputPropertyPanel', ['$templateCache', '$compile', function ($templateCache, $compile) {
+    .directive('simputInputPropertyPanel', ['$compile', function ($compile) {
 
         return {
             restrict: 'AE',

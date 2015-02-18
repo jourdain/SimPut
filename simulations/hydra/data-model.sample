@@ -1,0 +1,33 @@
+{
+    "type": "hydra",
+    "name": "Hydra Input Generation for Single Pin mesh",
+    "comments": [
+        "Configure input deck for Single Pin mesh using Hydra-TH"
+    ],
+    "external": {
+        "block-tags"  : { "labels": [ "Water" ], "values": [ 1 ] },
+        "element-tags": { "labels": [], "values": [] },
+        "face-tags" : {
+            "labels": [ 
+                "Interior wall", 
+                "Exterior walls 1", 
+                "Exterior walls 2", 
+                "Exterior walls 3", 
+                "Exterior walls 4", 
+                "Splits", 
+                "InFlow", 
+                "OutFlow"
+            ],
+            "values": [
+                [ 3 ],
+                [ 4, 5, 6, 7 ],
+                [ 12, 15, 18, 21 ],
+                [ 13, 16, 19, 22 ],
+                [ 14, 17, 20, 23 ],
+                [ 8, 9, 10 ],
+                [ 2 ],
+                [ 11 ]
+            ]
+        }
+    }
+}

@@ -30,14 +30,17 @@ angular.module("kitware.SimPut.core")
                 }
                 reader.readAsText(files[0]);
             }
+
+            // Remove drop listener
+            dropTarget.removeEventListener('dragover', consumeEvent, false);
+            dropTarget.removeEventListener('dragenter', consumeEvent, false);
+            dropTarget.removeEventListener('drop', processFile, false);
         }
 
         // File reader - drop file
         dropTarget.addEventListener('dragover', consumeEvent, false);
         dropTarget.addEventListener('dragenter', consumeEvent, false);
         dropTarget.addEventListener('drop', processFile, false);
-
-
 
         function saveFile(fileName, content) {
             // Create data to download

@@ -8,5 +8,6 @@ require('./simput/core/simput-input-controller.js');
 require('./simput/core/simput-input-directive.js');
 require('./simput/core/simput-input-content-directive.js');
 require('./simput/core/simput-input-property-directive.js');
+require('./simput/core/simput-time-function-directive.js');
 
 angular.module('SimPut', ['kitware.SimPut']);

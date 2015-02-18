@@ -2,7 +2,8 @@
     "order": [ 
         "all", 
         "multi", 
-        "choice"
+        "choice",
+        "function"
     ],
     "views": {
         "all": {
@@ -42,6 +43,14 @@
             "size"      : -1,
             "attributes": [
                 "double-args", "string-args", "enum-args", "ext-enum"
+            ]
+        },
+        "function": {
+            "id"        : "function",
+            "label"     : "Function view",
+            "size"      : -1,
+            "attributes": [
+                "time-func"
             ]
         }
     },
@@ -159,6 +168,17 @@
                     "enum" : {
                         "external": "element-list"
                     }
+                }
+            ]
+        },
+        "time-func": {
+            "label": "Use CSV file to define time function",
+            "parameters": [
+                {
+                    "id" : "time-0",
+                    "label": "My function",
+                    "type": "function",
+                    "size": 1
                 }
             ]
         }

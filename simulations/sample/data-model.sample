@@ -1,0 +1,493 @@
+{
+    "type": "sample",
+    "external": {
+        "element-list": {
+            "labels": [
+                "In-take elements",
+                "Inlet Tip",
+                "Cooled side"
+            ],
+            "values": [
+                [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ],
+                [
+                    10
+                ],
+                [
+                    30,
+                    40
+                ]
+            ]
+        },
+        "face-list": {
+            "labels": [
+                "Interior wall",
+                "Exterior walls 1",
+                "Exterior walls 2",
+                "Exterior walls 3",
+                "Exterior walls 4",
+                "Splits",
+                "In flow",
+                "Out flow"
+            ],
+            "values": [
+                [
+                    3
+                ],
+                [
+                    4,
+                    5,
+                    6,
+                    7
+                ],
+                [
+                    12,
+                    15,
+                    18,
+                    21
+                ],
+                [
+                    13,
+                    16,
+                    19,
+                    22
+                ],
+                [
+                    14,
+                    17,
+                    20,
+                    23
+                ],
+                [
+                    8,
+                    9,
+                    10
+                ],
+                [
+                    2
+                ],
+                [
+                    11
+                ]
+            ]
+        }
+    },
+    "data": {
+        "all": [
+            {
+                "name": "New view",
+                "or": [
+                    {},
+                    {},
+                    {},
+                    {}
+                ],
+                "ext-enum": {
+                    "enum-n": [],
+                    "enum-1": -1
+                },
+                "enum-args": {
+                    "enum-n": [
+                        "Choice 1",
+                        "Choice 3",
+                        "Choice 5"
+                    ],
+                    "enum-1": "Choice 1"
+                },
+                "string-args": {
+                    "s3": [
+                        "a",
+                        "b",
+                        "c"
+                    ],
+                    "s2": [
+                        "Parameter 1",
+                        "Parameter 2"
+                    ],
+                    "s1": "Just simple text"
+                },
+                "double-args": {
+                    "d6": [
+                        0.11,
+                        0.12,
+                        0.13,
+                        0.21,
+                        0.22,
+                        0.31
+                    ],
+                    "d3": [
+                        0.123,
+                        0.456,
+                        0.789
+                    ],
+                    "d2": [
+                        0.123,
+                        0.456
+                    ],
+                    "d1": 0.123
+                },
+                "$$hashKey": "object:70"
+            }
+        ],
+        "nested-a": [
+            {
+                "name": "nest a001",
+                "or": [
+                    {},
+                    {},
+                    {},
+                    {}
+                ],
+                "ext-enum": {
+                    "enum-n": [
+                        "In-take elements",
+                        "Inlet Tip"
+                    ],
+                    "enum-1": "Out flow"
+                },
+                "enum-args": {
+                    "enum-n": [
+                        "Choice 1",
+                        "Choice 3",
+                        "Choice 5"
+                    ],
+                    "enum-1": "Choice 1"
+                },
+                "string-args": {
+                    "s3": [
+                        "a",
+                        "b",
+                        "c"
+                    ],
+                    "s2": [
+                        "Parameter 1",
+                        "Parameter 2"
+                    ],
+                    "s1": "Just simple text"
+                },
+                "double-args": {
+                    "d6": [
+                        0.11,
+                        0.12,
+                        0.13,
+                        0.21,
+                        0.22,
+                        0.31
+                    ],
+                    "d3": [
+                        0.123,
+                        0.456,
+                        0.789
+                    ],
+                    "d2": [
+                        0.123,
+                        0.456
+                    ],
+                    "d1": 0.123
+                },
+                "$$hashKey": "object:75"
+            },
+            {
+                "name": "nest a002",
+                "or": [
+                    {},
+                    {},
+                    {},
+                    {}
+                ],
+                "ext-enum": {
+                    "enum-n": [
+                        "Inlet Tip"
+                    ],
+                    "enum-1": "Interior wall"
+                },
+                "enum-args": {
+                    "enum-n": [
+                        "Choice 1",
+                        "Choice 3",
+                        "Choice 5"
+                    ],
+                    "enum-1": "Choice 1"
+                },
+                "string-args": {
+                    "s3": [
+                        "a",
+                        "b",
+                        "c"
+                    ],
+                    "s2": [
+                        "Parameter 1",
+                        "Parameter 2"
+                    ],
+                    "s1": "Just simple text"
+                },
+                "double-args": {
+                    "d6": [
+                        0.11,
+                        0.12,
+                        0.13,
+                        0.21,
+                        0.22,
+                        0.31
+                    ],
+                    "d3": [
+                        0.123,
+                        0.456,
+                        0.789
+                    ],
+                    "d2": [
+                        0.123,
+                        0.456
+                    ],
+                    "d1": 0.123
+                },
+                "$$hashKey": "object:80"
+            }
+        ],
+        "nested-b": [
+            {
+                "name": "nest b001",
+                "or": [
+                    {},
+                    {},
+                    {},
+                    {}
+                ],
+                "ext-enum": {
+                    "enum-n": [
+                        "Cooled side"
+                    ],
+                    "enum-1": "Exterior walls 4"
+                },
+                "enum-args": {
+                    "enum-n": [
+                        "Choice 1",
+                        "Choice 3",
+                        "Choice 5"
+                    ],
+                    "enum-1": "Choice 1"
+                },
+                "string-args": {
+                    "s3": [
+                        "a",
+                        "b",
+                        "c"
+                    ],
+                    "s2": [
+                        "Parameter 1",
+                        "Parameter 2"
+                    ],
+                    "s1": "Just simple text"
+                },
+                "double-args": {
+                    "d6": [
+                        0.11,
+                        0.12,
+                        0.13,
+                        0.21,
+                        0.22,
+                        0.31
+                    ],
+                    "d3": [
+                        0.123,
+                        0.456,
+                        0.789
+                    ],
+                    "d2": [
+                        0.123,
+                        0.456
+                    ],
+                    "d1": 0.123
+                },
+                "$$hashKey": "object:85"
+            },
+            {
+                "name": "nest b002",
+                "or": [
+                    {},
+                    {},
+                    {},
+                    {}
+                ],
+                "ext-enum": {
+                    "enum-n": [
+                        "In-take elements",
+                        "Inlet Tip",
+                        "Cooled side"
+                    ],
+                    "enum-1": "Splits"
+                },
+                "enum-args": {
+                    "enum-n": [
+                        "Choice 1",
+                        "Choice 3",
+                        "Choice 5"
+                    ],
+                    "enum-1": "Choice 1"
+                },
+                "string-args": {
+                    "s3": [
+                        "a",
+                        "b",
+                        "c"
+                    ],
+                    "s2": [
+                        "Parameter 1",
+                        "Parameter 2"
+                    ],
+                    "s1": "Just simple text"
+                },
+                "double-args": {
+                    "d6": [
+                        0.11,
+                        0.12,
+                        0.13,
+                        0.21,
+                        0.22,
+                        0.31
+                    ],
+                    "d3": [
+                        0.123,
+                        0.456,
+                        0.789
+                    ],
+                    "d2": [
+                        0.123,
+                        0.456
+                    ],
+                    "d1": 0.123
+                },
+                "$$hashKey": "object:90"
+            }
+        ],
+        "multi": [
+            {
+                "name": "test 001",
+                "or": [
+                    {}
+                ],
+                "double-args": {
+                    "d6": [
+                        0.11,
+                        0.12,
+                        0.13,
+                        0.21,
+                        0.22,
+                        0.31
+                    ],
+                    "d3": [
+                        0.123,
+                        0.456,
+                        0.789
+                    ],
+                    "d2": [
+                        0.123,
+                        0.456
+                    ],
+                    "d1": 0.123
+                },
+                "$$hashKey": "object:95"
+            },
+            {
+                "name": "test 002",
+                "or": [
+                    {}
+                ],
+                "double-args": {
+                    "d6": [
+                        0.11,
+                        0.12,
+                        0.13,
+                        0.21,
+                        0.22,
+                        0.31
+                    ],
+                    "d3": [
+                        0.123,
+                        0.456,
+                        0.789
+                    ],
+                    "d2": [
+                        0.123,
+                        0.456
+                    ],
+                    "d1": 0.123
+                },
+                "$$hashKey": "object:100"
+            }
+        ],
+        "choice": [
+            {
+                "name": "New view",
+                "or": [
+                    {},
+                    {},
+                    {
+                        "active": "All enum possible setup",
+                        "labels": [
+                            "All enum possible setup",
+                            "Use external data for Enum"
+                        ],
+                        "values": [
+                            "enum-args",
+                            "ext-enum"
+                        ],
+                        "collapsed": false
+                    }
+                ],
+                "enum-args": {
+                    "enum-n": [
+                        "Choice 1",
+                        "Choice 3",
+                        "Choice 5"
+                    ],
+                    "enum-1": "Choice 1"
+                },
+                "ext-enum": {
+                    "enum-n": [],
+                    "enum-1": -1
+                },
+                "double-args": {
+                    "d6": [
+                        0.11,
+                        0.12,
+                        0.13,
+                        0.21,
+                        0.22,
+                        0.31
+                    ],
+                    "d3": [
+                        0.123,
+                        0.456,
+                        0.789
+                    ],
+                    "d2": [
+                        0.123,
+                        0.456
+                    ],
+                    "d1": 0.123
+                },
+                "string-args": {
+                    "s3": [
+                        "a",
+                        "b",
+                        "c"
+                    ],
+                    "s2": [
+                        "Parameter 1",
+                        "Parameter 2"
+                    ],
+                    "s1": "internal"
+                },
+                "$$hashKey": "object:130"
+            }
+        ]
+    }
+}

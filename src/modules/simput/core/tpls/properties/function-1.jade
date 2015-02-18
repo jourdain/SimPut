@@ -1,2 +1,8 @@
-p
-    | One usage of your directive go here.
+div(layout="row", layout-align="space-around center")
+    div.time-function-container
+        div.time-function-widget(simput-time-function, data='data', key='{{ property.id }}')
+            
+    span(flex)
+
+    md-button.md-fab.help-button(aria-label="Toggle help", ng-click="toggleLocalHelp(property.id)")
+        i.fa.fa-fw.fa-question.md-primary
