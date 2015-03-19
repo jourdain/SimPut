@@ -94,7 +94,7 @@
                "components": ["k11","k12","k13","k22","k23","k33"],
                "type"      : "double", 
                "size"      : 6,
-               "default"   : [1,1,1,1,1,1], 
+               "default"   : [1,0,0,1,0,1], 
                "layout"    : "half-matrix"
             },{
                "id"      : "material.mu",
