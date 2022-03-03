@@ -1,17 +1,2 @@
-# SimPut
-=====================
-
-Simple input for simulation
-
-## Introduction
-===============
-
-
-## Configuration
-================
-
-Install system wide the following application
-
-    $ brew install node
-    $ npm install
-    $ npm run build
+Corresponding Web project available: https://github.com/Kitware/simput
+A trame based approach is also available: https://github.com/Kitware/py-simput (possible rename to trame-simput)
